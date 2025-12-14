@@ -1,0 +1,293 @@
+/* Общие настройки */
+:root {
+    --primary-color: #039967; /* Акцентный цвет (малиновый неон) */
+    --bg-color: #0a0a0a;      /* Очень темный фон */
+    --text-color: #ffffff;
+    --secondary-bg: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Красивый шрифт для заголовков */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* Навигация */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section (Главная с фото) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501612780327-450456b106f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.hero h1 span {
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.btn-main {
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-main:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Секции */
+.section-padding {
+    padding: 80px 5%;
+}
+
+.bg-dark {
+    background-color: var(--secondary-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+/* Обо мне */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0px var(--primary-color); /* Стильная тень */
+}
+
+/* Музыка */
+.music-grid {
+    display: grid;
+    /* Магия здесь:
+       auto-fit: поместить столько, сколько влезет.
+       minmax(18rem, 25rem): Карточка будет от 18 "букв" до 25 "букв" шириной.
+       Это примерно от 280px до 400px, но зависит от настроек экрана пользователя.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 25rem));
+    
+    /* Это выровняет карточки (даже если она одна) по центру экрана */
+    justify-content: center;
+    
+    gap: 30px;
+}
+
+.album-card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    /* Убери здесь width и max-width, если добавлял их ранее */
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+}
+
+.album-card img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-bottom: 1px solid transparent;
+}
+
+.links a:hover {
+    color: #fff;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+/* Контакты */
+.contact-container {
+    text-align: center;
+    max-width: 700px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    background: #1f1f1f;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #666;
+    border-top: 1px solid #222;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; } /* Упрощенно скрываем меню на моб */
+    .contact-info { flex-direction: column; gap: 20px; }
+}
+
+/* --- АДАПТИВНОСТЬ (МОБИЛЬНАЯ ВЕРСИЯ) --- */
+
+/* Это правило срабатывает только на экранах шириной до 768px (планшеты и телефоны) */
+@media (max-width: 768px) {
+
+    /* 1. Уменьшаем огромный заголовок на главной */
+    .hero h1 {
+        font-size: 2.2rem; /* Был огромный, стал компактный */
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 2. Навигация: Ссылки ставим под логотип (чтобы влезали) */
+    .navbar {
+        flex-direction: column; /* Элементы встают в столбик */
+        padding: 15px;
+        background-color: rgba(0,0,0,0.95); /* Делаем фон почти черным */
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Разрешаем перенос ссылок на новую строку */
+    }
+
+    .nav-links li {
+        margin: 5px 10px; /* Отступы между ссылками, чтобы пальцем было удобно жать */
+    }
+
+    /* 3. Блок "Обо мне": Картинка сверху, текст снизу */
+    .about-grid {
+        grid-template-columns: 1fr; /* Одна колонка вместо двух */
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* 4. Отступы секций делаем меньше, чтобы не крутить долго */
+    .section-padding {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    /* 5. Контакты выстраиваем в столбик */
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Делаем поля ввода на весь экран по ширине */
+    .contact-form {
+        width: 100%;
+    }
+}

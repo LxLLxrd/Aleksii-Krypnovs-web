@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкант | Официальный сайт</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Алексей Крупнов</div>
+        <ul class="nav-links">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#music">Музыка</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>НОВЫЙ АЛЬБОМ <br><span>"Splinter по дороге времени"</span></h1>
+            <p>Уже доступен на площадках</p>
+            <a href="#music" class="btn-main">Слушать сейчас</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container about-grid">
+            <div class="about-img">
+                <img src="./Artboard 1 (1).jpeg" alt="Музыкант">
+            </div>
+            <div class="about-text">
+                <h2>Обо мне</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magnam voluptatum rem sapiente dicta neque vitae explicabo, debitis, tempore possimus fuga, dolores natus nihil obcaecati deleniti voluptatem. Consectetur, ab laudantium?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque voluptate impedit repellendus dolore ad pariatur alias? Placeat saepe sit eos, repellendus aut minus modi obcaecati quibusdam. Voluptatum doloremque blanditiis deserunt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="music" class="section-padding bg-dark">
+        <div class="container">
+            <h2 class="section-title">Альбомы</h2>
+            <div class="music-grid">
+                <div class="album-card">
+                    <img src="./album.png" alt="Обложка альбома">
+                    <h3>Splinter по дороге времени</h3>
+                    <p>2015</p>
+                    <div class="links">
+                        <a href="https://www.youtube.com/playlist?list=PL4duEHaKTh88cE3dtcKD8Vp4MxcLZS7HK" class="link-youtube">YouTube</a>
+                        <a href="https://www.facebook.com/aleksej.krupnov.1" class="link-facebook">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container contact-container">
+            <h2>Связаться со мной</h2>
+            <p>По вопросам выступлений и сотрудничества</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>tamagavk22@inbox.lv</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Facebook</h4>
+                    <p>facebook.com/aleksej.krupnov.1</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш Email" required>
+                <textarea rows="5" placeholder="Сообщение"></textarea>
+                <button type="submit" class="btn-main">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Алексей Крупнов. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Небольшой скрипт для плавного скролла
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
